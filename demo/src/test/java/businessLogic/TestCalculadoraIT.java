@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package businessLogic;
 
 import org.junit.After;
@@ -10,29 +5,26 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
-/**
- *
- * @author Anabel
- */
-public class CalculadoraIT {
-    
-    public CalculadoraIT() {
+public class TestCalculadoraIT {
+
+    public TestCalculadoraIT() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -61,7 +53,7 @@ public class CalculadoraIT {
         float expResult = 5F;
         float result = Calculadora.substract(a, b);
         assertEquals(expResult, result, 0.0);
-        
+
     }
 
     /**
@@ -75,7 +67,7 @@ public class CalculadoraIT {
         float expResult = 14F;
         float result = Calculadora.multiply(a, b);
         assertEquals(expResult, result, 0.0);
-        
+
     }
 
     /**
@@ -89,7 +81,14 @@ public class CalculadoraIT {
         float expResult = 4F;
         float result = Calculadora.div(a, b);
         assertEquals(expResult, result, 0.0);
-        
     }
-    
+
+    // Test mínimo - 1
+    @Test
+    public void testMin() {
+        float a = (float) -9223372036854775808.0;
+        float b = 1;
+        assertEquals((float) -9223372036854775809.0, a-b);
+    }
+
 }

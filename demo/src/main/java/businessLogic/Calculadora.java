@@ -5,10 +5,6 @@
  */
 package businessLogic;
 
-/**
- *
- * @author Anabel
- */
 public class Calculadora {
     
     public static float add(float a, float b)

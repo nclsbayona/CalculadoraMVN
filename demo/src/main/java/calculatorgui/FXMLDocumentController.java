@@ -20,10 +20,10 @@ import javafx.scene.control.TextField;
  * @author Anabel
  */
 public class FXMLDocumentController implements Initializable {
-    
+
     private float data;
     private int operation = -1;
-    
+
     @FXML
     private Button one;
 
@@ -71,7 +71,7 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private Button div;
-    
+
     @FXML
     private Button back;
 
@@ -96,10 +96,9 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Button log;
 
-
     @FXML
     private TextField display;
-    
+
     @FXML
     private void handleButtonAction(ActionEvent event) {
         if (event.getSource() == one) {
@@ -124,47 +123,49 @@ public class FXMLDocumentController implements Initializable {
             display.setText(display.getText() + "0");
         } else if (event.getSource() == clear) {
             display.setText("");
-        }
-        else if (event.getSource() == plus) {
+        } else if (event.getSource() == plus) {
             data = Float.parseFloat(display.getText());
-            operation = 1; //Addition
+            operation = 1; // Addition
             display.setText("");
         } else if (event.getSource() == minus) {
             data = Float.parseFloat(display.getText());
-            operation = 2; //Substraction
+            operation = 2; // Substraction
             display.setText("");
         } else if (event.getSource() == mult) {
             data = Float.parseFloat(display.getText());
-            operation = 3; //Mul
+            operation = 3; // Mul
             display.setText("");
         } else if (event.getSource() == div) {
             data = Float.parseFloat(display.getText());
-            operation = 4; //Division
+            operation = 4; // Division
             display.setText("");
-        }
-        else if (event.getSource() == equals) {
+        } else if (event.getSource() == equals) {
             float secondOperand = Float.parseFloat(display.getText());
             switch (operation) {
-                case 1: //Addition
-                    float ans = Calculadora.add(data, secondOperand);
-                    display.setText(String.valueOf(ans));break;
-                case 2: //Subtraction
-                    ans = Calculadora.substract(data, secondOperand);
-                    display.setText(String.valueOf(ans));break;
-                case 3: //Mul
-                    ans = Calculadora.multiply(data, secondOperand);
-                    display.setText(String.valueOf(ans));break;
-                case 4: //Div
-                    ans = 0f;
-                    ans = Calculadora.div(data, secondOperand);                    
-                    display.setText(String.valueOf(ans));break;
+            case 1: // Addition
+                float ans = Calculadora.add(data, secondOperand);
+                display.setText(String.valueOf(ans));
+                break;
+            case 2: // Subtraction
+                ans = Calculadora.substract(data, secondOperand);
+                display.setText(String.valueOf(ans));
+                break;
+            case 3: // Mul
+                ans = Calculadora.multiply(data, secondOperand);
+                display.setText(String.valueOf(ans));
+                break;
+            case 4: // Div
+                ans = 0f;
+                ans = Calculadora.div(data, secondOperand);
+                display.setText(String.valueOf(ans));
+                break;
             }
         }
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
 }
