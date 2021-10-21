@@ -89,7 +89,6 @@ public class TestCalculadoraIT {
         float a = (float) -9223372036854775808.0;
         float b = 1;
         float c= a-b;
-        System.out.println(c);
         assertNotEquals(c, 0);
     }
 
