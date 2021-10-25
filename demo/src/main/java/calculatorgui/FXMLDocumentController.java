@@ -125,6 +125,9 @@ public class FXMLDocumentController implements Initializable {
             display.setText("");
         } else if (event.getSource() == coma) {
             display.setText(display.getText()+".");
+        } else if (event.getSource() == signo) {
+            float aux = Float.parseFloat(display.getText());
+            display.setText(String.valueOf(Calculadora.multiply(-1, aux)));
         } else if (event.getSource() == plus) {
             data = Float.parseFloat(display.getText());
             operation = 1; // Addition
