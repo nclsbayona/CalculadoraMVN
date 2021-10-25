@@ -167,16 +167,16 @@ public class TestCalculadoraIT {
         assertTrue(Double.isInfinite(c));
     }
 
-    //Test coma
+    // Test coma
     @Test
     public void testComa() {
-        float a = (float)1.0;
+        float a = (float) 1.0;
         int b = 1;
         float c = Calculadora.coma(String.valueOf(a));
         assertEquals(c, b, 0);
     }
 
-    //Test coma a un valor con coma
+    // Test coma a un valor con coma
     @Test
     public void testComaComa() {
         float a = (float) 1.83;
@@ -185,27 +185,68 @@ public class TestCalculadoraIT {
         assertEquals(c, b, 0);
     }
 
-    //Test 1x10
+    // Test back
     @Test
-    public void testTenPow(){
+    public void testBack() {
+        int a = 111;
+        String c = Calculadora.back(String.valueOf(a));
+        assertEquals(c, "11");
+    }
+
+    // Test back decimal
+    @Test
+    public void testBackDec() {
+        float a = (float) 11.02;
+        String c = Calculadora.back(String.valueOf(a));
+        assertEquals(c, "11.0");
+    }
+
+    // Test back con suma
+    @Test
+    public void testBackSuma() {
+        float a = (float) 11.2;
+        float c = Calculadora.add(Float.parseFloat(Calculadora.back(String.valueOf(a))), (float) 0.2);
+        assertEquals(c, 11.2, 0.2);
+    }
+
+    // Test factorial de decimal
+    @Test
+    public void testFactoDecimal() {
+        float a = (float) 11.2;
+        float c = Calculadora.nFact(a);
+        assertEquals(c, 0, 0);
+    }
+
+    // Test signo basico
+    @Test
+    public void testSign() {
+        float a = (float) 11;
+        float c = Calculadora.signo(String.valueOf(a));
+        assertEquals(c, Calculadora.multiply(-1, a), 0);
+    }
+
+    // Test 1x10
+
+    @Test
+    public void testTenPow() {
         float a = 1;
         float expResult = 10;
         float result = Calculadora.tenPow(a);
         assertEquals(expResult, result, 0);
     }
 
-    //Test -1x10
+    // Test -1x10
     @Test
-    public void testMinusTenPow(){
+    public void testMinusTenPow() {
         float a = -1;
         float expResult = -10;
         float result = Calculadora.tenPow(a);
         assertEquals(expResult, result, 0);
     }
 
-    //Test mod
+    // Test mod
     @Test
-    public void testMod(){
+    public void testMod() {
         float a = (float) 10.0;
         float b = (float) 3.0;
         float expResult = (float) 1.0;
@@ -213,9 +254,13 @@ public class TestCalculadoraIT {
         assertEquals(expResult, result, 0);
     }
 
+<<<<<<< HEAD
     //Test mod even
+=======
+    // Test mod
+>>>>>>> ad2d3de7915fc1e275db7b5d9b889130ea3b8896
     @Test
-    public void testModEven(){
+    public void testModEven() {
         float a = (float) 10.0;
         float b = (float) 2.0;
         float expResult = (float) 0.0;
@@ -223,6 +268,7 @@ public class TestCalculadoraIT {
         assertEquals(expResult, result, 0);
     }
 
+<<<<<<< HEAD
     //Test mod odd
     @Test
     public void testModOdd(){
@@ -260,4 +306,6 @@ public class TestCalculadoraIT {
     }
 
 
+=======
+>>>>>>> ad2d3de7915fc1e275db7b5d9b889130ea3b8896
 }
