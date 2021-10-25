@@ -88,7 +88,7 @@ public class TestCalculadoraIT {
     public void testMin() {
         float a = (float) -9223372036854775808.0;
         float b = 1;
-        float c= Calculadora.substract(a, b);
+        float c = Calculadora.substract(a, b);
         assertEquals(c, (float) -9223372036854775809.0, 0);
     }
 
@@ -97,9 +97,17 @@ public class TestCalculadoraIT {
     public void testMax() {
         float a = (float) 9223372036854775807.0;
         float b = 1;
-        float c= Calculadora.add(a, b);
+        float c = Calculadora.add(a, b);
         assertEquals(c, (float) 9223372036854775808.0, 0);
     }
 
+    // Test doble de un numero
+    @Test
+    public void testDoble() {
+        float a = (float) 9223372036854775807.0;
+        float b = 2;
+        float c = Calculadora.substract(Calculadora.multiply(a, b), a);
+        assertEquals(c, a, 0);
+    }
 
 }
