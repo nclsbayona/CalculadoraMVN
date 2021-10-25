@@ -177,6 +177,11 @@ public class FXMLDocumentController implements Initializable {
             display.setText("");
             float ans = Calculadora.log(data);
             display.setText(String.valueOf(ans));
+        } else if (event.getSource() == tenPow) { // tenPow
+            data = Float.parseFloat(display.getText());
+            display.setText("");
+            float ans = Calculadora.tenPow(data);
+            display.setText(String.valueOf(ans));
         } else if (event.getSource() == equals) {
             float secondOperand = Float.parseFloat(display.getText());
             switch (operation) {
