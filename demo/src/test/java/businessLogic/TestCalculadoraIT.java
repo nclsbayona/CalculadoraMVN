@@ -5,6 +5,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import businessLogic.Calculadora;
 
 import static org.junit.Assert.*;
 
@@ -288,7 +289,11 @@ public class TestCalculadoraIT {
         assertEquals(expResult, result, 0);
     }
 
+<<<<<<< HEAD
+    //Test mod even
+=======
     // Test mod
+>>>>>>> ad2d3de7915fc1e275db7b5d9b889130ea3b8896
     @Test
     public void testModEven() {
         float a = (float) 10.0;
@@ -298,4 +303,44 @@ public class TestCalculadoraIT {
         assertEquals(expResult, result, 0);
     }
 
+<<<<<<< HEAD
+    //Test mod odd
+    @Test
+    public void testModOdd(){
+        float a = (float) 11.0;
+        float b = (float) 2.0;
+        float expResult = (float) 1.0;
+        float result = Calculadora.mod(a, b);
+        assertEquals(expResult, result, 0);
+    }
+
+    //Test sqrt
+    @Test
+    public void testSqrt(){
+        float a = (float) 4.0;
+        float expResult = (float) 2.0;
+        float result = Calculadora.sqrt(a);
+        assertEquals(expResult, result, 0);
+    }
+
+    //Test sqrt big number
+    @Test
+    public void testSqrtBigNumber(){
+        float a = (float) 6561;
+        float expResult = (float) 81.0;
+        float result = Calculadora.sqrt(a);
+        assertEquals(expResult, result, 0);
+    }
+
+    //Test sqrt negative number
+    @Test
+    public void testSqrtNegativeNumber(){
+        float a = (float) -4.0;
+        float result = Calculadora.sqrt(a);
+        assertTrue(Float.isNaN(result));
+    }
+
+
+=======
+>>>>>>> ad2d3de7915fc1e275db7b5d9b889130ea3b8896
 }
