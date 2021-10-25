@@ -175,4 +175,13 @@ public class TestCalculadoraIT {
         assertEquals(c, b, 0);
     }
 
+    //Prueba pow10
+    @Test
+    public void testTenpow(){
+        float a=1;
+        float expResult = 10;
+        float result = Calculadora.tenPow(a);
+        assertEquals(expResult,result,0);
+    }
+
 }
