@@ -184,4 +184,13 @@ public class TestCalculadoraIT {
         assertEquals(c, b, 0);
     }
 
+    //Test x10
+    @Test
+    public void testTenPow(){
+        float a = 1;
+        float expResult = 10;
+        float result = Calculadora.tenPow(a);
+        assertEquals(expResult, result, 0);
+    }
+
 }
