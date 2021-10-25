@@ -216,6 +216,14 @@ public class TestCalculadoraIT {
         assertEquals(c, 0, 0);
     }
 
+    // Test signo basico
+    @Test
+    public void testSign() {
+        float a = (float) 11;
+        float c = Calculadora.signo(String.valueOf(a));
+        assertEquals(c, Calculadora.multiply(-1, a), 0);
+    }
+
     // Test 1x10
 
     @Test
