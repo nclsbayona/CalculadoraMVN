@@ -192,12 +192,20 @@ public class TestCalculadoraIT {
         assertEquals(c, "11");
     }
 
-    //Test back
+    //Test back decimal
     @Test
     public void testBackDec() {
         float a = (float) 11.02;
         String c=Calculadora.back(String.valueOf(a));
         assertEquals(c, "11.0");
+    }
+
+    //Test back con suma
+    @Test
+    public void testBackSuma() {
+        float a = (float) 11.2;
+        float c=Calculadora.add(Float.parseFloat(Calculadora.back(String.valueOf(a))),(float)0.2);
+        assertEquals(c, 11.2, 0.2);
     }
 
     //Test 1x10
