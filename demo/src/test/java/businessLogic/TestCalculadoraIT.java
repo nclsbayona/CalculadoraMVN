@@ -191,8 +191,8 @@ public class TestCalculadoraIT {
         String c=Calculadora.back(String.valueOf(a));
         assertEquals(c, "11");
     }
+    //Test 1x10
 
-    //Test x10
     @Test
     public void testTenPow(){
         float a = 1;
@@ -200,5 +200,35 @@ public class TestCalculadoraIT {
         float result = Calculadora.tenPow(a);
         assertEquals(expResult, result, 0);
     }
+
+    //Test -1x10
+    @Test
+    public void testMinusTenPow(){
+        float a = -1;
+        float expResult = -10;
+        float result = Calculadora.tenPow(a);
+        assertEquals(expResult, result, 0);
+    }
+
+    //Test mod
+    @Test
+    public void testMod(){
+        float a = (float) 10.0;
+        float b = (float) 3.0;
+        float expResult = (float) 1.0;
+        float result = Calculadora.mod(a, b);
+        assertEquals(expResult, result, 0);
+    }
+
+    //Test mod
+    @Test
+    public void testModEven(){
+        float a = (float) 10.0;
+        float b = (float) 2.0;
+        float expResult = (float) 0.0;
+        float result = Calculadora.mod(a, b);
+        assertEquals(expResult, result, 0);
+    }
+
 
 }
