@@ -172,7 +172,7 @@ public class TestCalculadoraIT {
         float a = 1;
         int b = 1;
         float c = Calculadora.coma(String.valueOf(a));
-        assertEquals(a, b, 0);
+        assertEquals(c, b, 0);
     }
 
 }
