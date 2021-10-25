@@ -23,7 +23,7 @@ public class FXMLDocumentController implements Initializable {
 
     private float data;
     private int operation = -1;
-    private boolean replace=false;
+    private boolean replace = false;
 
     @FXML
     private Button one;
@@ -102,9 +102,9 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void handleButtonAction(ActionEvent event) {
-        if (replace){
-            display.setText(display.getText().substring(0, display.getText().length()-1));
-            replace=false;
+        if (replace) {
+            display.setText(display.getText().substring(0, display.getText().length() - 1));
+            replace = false;
         }
 
         if (event.getSource() == one) {
@@ -130,11 +130,11 @@ public class FXMLDocumentController implements Initializable {
         } else if (event.getSource() == clear) {
             display.setText("");
         } else if (event.getSource() == coma) {
-            String value=display.getText();
+            String value = display.getText();
             display.setText(String.valueOf(Calculadora.coma(value)));
-            replace=true;
+            replace = true;
         } else if (event.getSource() == signo) {
-            String value=display.getText();
+            String value = display.getText();
             display.setText(String.valueOf(Calculadora.signo(value)));
         } else if (event.getSource() == plus) {
             data = Float.parseFloat(display.getText());
@@ -156,30 +156,26 @@ public class FXMLDocumentController implements Initializable {
             data = Float.parseFloat(display.getText());
             operation = 5; // mod
             display.setText("");
-        }else if (event.getSource() == sqrt) { //sqrt
+        } else if (event.getSource() == sqrt) { // sqrt
             data = Float.parseFloat(display.getText());
             display.setText("");
             float ans = Calculadora.sqrt(data);
             display.setText(String.valueOf(ans));
-        }
-        else if (event.getSource() == nFact) { //nfact
+        } else if (event.getSource() == nFact) { // nfact
             data = Float.parseFloat(display.getText());
             display.setText("");
             float ans = Calculadora.nFact(data);
-            display.setText(String.valueOf(ans)); 
-        }  
-        else if (event.getSource() == signo) { //signo
-            String c=display.getText();
+            display.setText(String.valueOf(ans));
+        } else if (event.getSource() == signo) { // signo
+            String c = display.getText();
             float ans = Calculadora.signo(c);
             display.setText(String.valueOf(ans));
-        } 
-        else if (event.getSource() == log) { //log
+        } else if (event.getSource() == log) { // log
             data = Float.parseFloat(display.getText());
             display.setText("");
             float ans = Calculadora.log(data);
             display.setText(String.valueOf(ans));
-        }   
-         else if (event.getSource() == equals) {
+        } else if (event.getSource() == equals) {
             float secondOperand = Float.parseFloat(display.getText());
             switch (operation) {
             case 1: // Addition
@@ -199,19 +195,43 @@ public class FXMLDocumentController implements Initializable {
                 ans = Calculadora.div(data, secondOperand);
                 display.setText(String.valueOf(ans));
                 break;
-            case 5: //Mod
+            case 5: // Mod
                 ans = 0f;
                 ans = Calculadora.mod(data, secondOperand);
                 display.setText(String.valueOf(ans));
                 break;
-            
+
             }
         }
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }
+    @FXML
+    public void initialize(URL arg0, ResourceBundle arg1) {
+        assert back != null : "fx:id=\"back\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert clear != null : "fx:id=\"clear\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert coma != null : "fx:id=\"coma\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert display != null : "fx:id=\"display\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert div != null : "fx:id=\"div\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert eight != null : "fx:id=\"eight\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert equals != null : "fx:id=\"equals\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert five != null : "fx:id=\"five\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert four != null : "fx:id=\"four\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert log != null : "fx:id=\"log\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert minus != null : "fx:id=\"minus\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert mod != null : "fx:id=\"mod\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert mult != null : "fx:id=\"mult\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert nFact != null : "fx:id=\"nFact\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert nine != null : "fx:id=\"nine\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert one != null : "fx:id=\"one\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert plus != null : "fx:id=\"plus\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert seven != null : "fx:id=\"seven\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert signo != null : "fx:id=\"signo\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert six != null : "fx:id=\"six\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert sqrt != null : "fx:id=\"sqrt\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert tenPow != null : "fx:id=\"tenPow\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert three != null : "fx:id=\"three\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert two != null : "fx:id=\"two\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert zero != null : "fx:id=\"zero\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
 
+    }
 }
