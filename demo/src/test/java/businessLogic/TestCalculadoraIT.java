@@ -191,6 +191,15 @@ public class TestCalculadoraIT {
         String c=Calculadora.back(String.valueOf(a));
         assertEquals(c, "11");
     }
+
+    //Test back
+    @Test
+    public void testBackDec() {
+        float a = (float) 11.02;
+        String c=Calculadora.back(String.valueOf(a));
+        assertEquals(c, "11.0");
+    }
+
     //Test 1x10
 
     @Test
