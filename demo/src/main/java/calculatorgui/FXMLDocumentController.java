@@ -144,6 +144,10 @@ public class FXMLDocumentController implements Initializable {
             data = Float.parseFloat(display.getText());
             operation = 4; // Division
             display.setText("");
+        } else if (event.getSource() == mod) {
+            data = Float.parseFloat(display.getText());
+            operation = 5; // mod
+            display.setText("");
         } else if (event.getSource() == equals) {
             float secondOperand = Float.parseFloat(display.getText());
             switch (operation) {
@@ -162,6 +166,11 @@ public class FXMLDocumentController implements Initializable {
             case 4: // Div
                 ans = 0f;
                 ans = Calculadora.div(data, secondOperand);
+                display.setText(String.valueOf(ans));
+                break;
+            case 5: //Mod
+                ans = 0f;
+                ans = Calculadora.mod(data, secondOperand);
                 display.setText(String.valueOf(ans));
                 break;
             }
