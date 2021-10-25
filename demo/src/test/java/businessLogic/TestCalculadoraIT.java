@@ -89,7 +89,17 @@ public class TestCalculadoraIT {
         float a = (float) -9223372036854775808.0;
         float b = 1;
         float c= a-b;
-        assertNotEquals(c, 0);
+        assertEquals(c, (float) -9223372036854775809.0, 0);
     }
+
+    // Test maximo + 1
+    @Test
+    public void testMax() {
+        float a = (float) 9223372036854775807.0;
+        float b = 1;
+        float c= a+b;
+        assertEquals(c, (float) 9223372036854775808.0, 0);
+    }
+
 
 }
