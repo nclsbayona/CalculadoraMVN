@@ -225,6 +225,41 @@ public class TestCalculadoraIT {
         assertEquals(c, Calculadora.multiply(-1, a), 0);
     }
 
+    // Test signo numero par de veces
+    @Test
+    public void testSigno() {
+        float a = (float) 11;
+        float c = a;
+        for (int i = 0; i < 100; i++)
+            c = Calculadora.signo(String.valueOf(c));
+        assertEquals(c, a, 0);
+    }
+
+    // Test signo numero impar de veces
+    @Test
+    public void testSigno2() {
+        float a = (float) 11;
+        float c = a;
+        for (int i = 1; i < 100; i++)
+            c = Calculadora.signo(String.valueOf(c));
+        assertEquals(c, Calculadora.multiply(-1, a), 0);
+    }
+
+    // Test mod de numeros signo inverso
+    @Test
+    public void testModSigno() {
+        float a = (float) 11;
+        assertEquals(0, Calculadora.mod(Calculadora.signo(String.valueOf(a)), a), 0);
+    }
+
+    // Test mod de numeros signo inverso
+    @Test
+    public void testIntegridad() {
+        int a = 11;
+        float b = (float) 1.0;
+        assertEquals(a, Calculadora.multiply(a, b), 0);
+    }
+
     // Test 1x10
 
     @Test
@@ -255,6 +290,7 @@ public class TestCalculadoraIT {
     }
 
     //Test mod even
+    // Test mod
     @Test
     public void testModEven() {
         float a = (float) 10.0;
