@@ -172,9 +172,8 @@ public class FXMLDocumentController implements Initializable {
             display.setText(String.valueOf(ans)); 
         }  
         else if (event.getSource() == signo) { //signo
-            data = Float.parseFloat(display.getText());
-            display.setText("");
-            float ans = Calculadora.signo(data);
+            String c=display.getText();
+            float ans = Calculadora.signo(c);
             display.setText(String.valueOf(ans));
         } 
         else if (event.getSource() == log) { //log
