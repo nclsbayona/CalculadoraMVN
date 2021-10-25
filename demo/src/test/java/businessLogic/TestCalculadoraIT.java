@@ -152,7 +152,7 @@ public class TestCalculadoraIT {
     @Test
     public void testSumaInversos() {
         float a = 1;
-        float b = Calculadora.multiply(a, -1);
+        float b = Calculadora.signo(String.valueOf(a));
         float c = Calculadora.add(a, b);
         assertEquals(c, 0, 0);
     }
@@ -164,6 +164,15 @@ public class TestCalculadoraIT {
         float b = 0;
         float c = Calculadora.div(a, b);
         assertTrue(Double.isInfinite(c));
+    }
+
+    //Prueba coma
+    @Test
+    public void testComa() {
+        float a = 1;
+        int b = 1;
+        float c = Calculadora.coma(String.valueOf(a));
+        assertEquals(a, b, 0);
     }
 
 }
