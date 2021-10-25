@@ -260,6 +260,21 @@ public class TestCalculadoraIT {
         assertEquals(a, Calculadora.multiply(a, b), 0);
     }
 
+    // Test log de 1
+    @Test
+    public void testLog1() {
+        int a = 1;
+        assertEquals(Calculadora.substract(a, a), Calculadora.log(a), 0);
+    }
+
+     // Test log de 1
+     @Test
+     public void testSignoConDiv() {
+         int a = 10;
+         int b=-1;
+         assertEquals(a, Calculadora.signo(String.valueOf(Calculadora.div(a, b))), 0);
+     }
+
     // Test 1x10
 
     @Test
