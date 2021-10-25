@@ -280,7 +280,7 @@ public class TestCalculadoraIT {
     public void testFacto0y1() {
         int a = 0;
         int b = 1;
-        assertEquals(Calculadora.nFact(0), Calculadora.nFact(b), 0);
+        assertEquals(Calculadora.nFact(a), Calculadora.nFact(b), 0);
     }
 
     // Test 1x10
