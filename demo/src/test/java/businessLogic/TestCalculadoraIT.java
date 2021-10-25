@@ -184,6 +184,14 @@ public class TestCalculadoraIT {
         assertEquals(c, b, 0);
     }
 
+    //Test back
+    @Test
+    public void testBack() {
+        int a = 111;
+        String c=Calculadora.back(String.valueOf(a));
+        assertEquals(c, "11");
+    }
+
     //Test x10
     @Test
     public void testTenPow(){
