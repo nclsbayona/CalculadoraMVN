@@ -34,7 +34,7 @@ public class TestCalculadoraIT {
      */
     @Test
     public void testAdd() {
-        System.out.println("add");
+        // System.out.println("add");
         float a = 3F;
         float b = 5F;
         float expResult = 8F;
@@ -47,7 +47,7 @@ public class TestCalculadoraIT {
      */
     @Test
     public void testSubstract() {
-        System.out.println("substract");
+        // System.out.println("substract");
         float a = 10F;
         float b = 5F;
         float expResult = 5F;
@@ -61,7 +61,7 @@ public class TestCalculadoraIT {
      */
     @Test
     public void testMultiply() {
-        System.out.println("multiply");
+        // System.out.println("multiply");
         float a = 7F;
         float b = 2F;
         float expResult = 14F;
@@ -75,7 +75,7 @@ public class TestCalculadoraIT {
      */
     @Test
     public void testDiv() {
-        System.out.println("div");
+        // System.out.println("div");
         float a = 20F;
         float b = 5F;
         float expResult = 4F;
@@ -110,6 +110,16 @@ public class TestCalculadoraIT {
         assertEquals(c, a, 0);
     }
 
+    // Test maximo - minimo
+    @Test
+    public void testMaxMMin() {
+        float a = (float) 9223372036854775807.0;
+        float b = (float) -9223372036854775808.0;
+        float c = Calculadora.substract(a, b);
+        float d = (float) 18446744073709551615.0;
+        assertEquals(c, d, 0);
+    }
+
     // Test ley de signos
     @Test
     public void testSignos() {
@@ -119,14 +129,23 @@ public class TestCalculadoraIT {
         assertEquals(c, -5, 0);
     }
 
-    // Test maximo - minimo
+    // Test valor-valor
     @Test
-    public void testMaxMMin() {
-        float a = (float) 9223372036854775807.0;
-        float b = (float) -9223372036854775808.0;
+    public void testCero() {
+        float a = 2;
+        float b = 2;
         float c = Calculadora.substract(a, b);
-        float d = (float) 18446744073709551615.0;
-        assertEquals(c, d, 0);
+        assertEquals(c, 0, 0);
+    }
+
+    // Test valor+1
+    @Test
+    public void testWhile() {
+        float a = 0;
+        float b = 1;
+        while (a < 1000)
+            a = Calculadora.add(a, b);
+        assertEquals(a, 1000, 0);
     }
 
 }
