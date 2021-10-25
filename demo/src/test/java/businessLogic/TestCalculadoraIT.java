@@ -166,11 +166,20 @@ public class TestCalculadoraIT {
         assertTrue(Double.isInfinite(c));
     }
 
-    //Prueba coma
+    //Test coma
     @Test
     public void testComa() {
-        float a = 1;
+        float a = (float)1.0;
         int b = 1;
+        float c = Calculadora.coma(String.valueOf(a));
+        assertEquals(c, b, 0);
+    }
+
+    //Test coma a un valor con coma
+    @Test
+    public void testComaComa() {
+        float a = (float) 1.83;
+        float b = (float) 1.83;
         float c = Calculadora.coma(String.valueOf(a));
         assertEquals(c, b, 0);
     }
