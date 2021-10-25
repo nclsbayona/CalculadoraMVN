@@ -106,8 +106,11 @@ public class FXMLDocumentController implements Initializable {
             display.setText(display.getText().substring(0, display.getText().length() - 1));
             replace = false;
         }
-
-        if (event.getSource() == one) {
+        if (event.getSource() == back) {
+            display.setText(display.getText().substring(0, display.getText().length() - 1));
+            if (display.getText().endsWith("."))
+                display.setText(display.getText() + "0");
+        } else if (event.getSource() == one) {
             display.setText(display.getText() + "1");
         } else if (event.getSource() == two) {
             display.setText(display.getText() + "2");
@@ -139,22 +142,22 @@ public class FXMLDocumentController implements Initializable {
             String value = display.getText();
             display.setText(String.valueOf(Calculadora.signo(value)));
         } else if (event.getSource() == plus) {
-            replace=false;
+            replace = false;
             data = Float.parseFloat(display.getText());
             operation = 1; // Addition
             display.setText("");
         } else if (event.getSource() == minus) {
-            replace=false;
+            replace = false;
             data = Float.parseFloat(display.getText());
             operation = 2; // Substraction
             display.setText("");
         } else if (event.getSource() == mult) {
-            replace=false;
+            replace = false;
             data = Float.parseFloat(display.getText());
             operation = 3; // Mul
             display.setText("");
         } else if (event.getSource() == div) {
-            replace=false;
+            replace = false;
             data = Float.parseFloat(display.getText());
             operation = 4; // Division
             display.setText("");
@@ -163,7 +166,7 @@ public class FXMLDocumentController implements Initializable {
             operation = 5; // mod
             display.setText("");
         } else if (event.getSource() == sqrt) { // sqrt
-            replace=false;
+            replace = false;
             data = Float.parseFloat(display.getText());
             display.setText("");
             float ans = Calculadora.sqrt(data);
@@ -173,7 +176,7 @@ public class FXMLDocumentController implements Initializable {
             display.setText("");
             float ans = Calculadora.nFact(data);
             display.setText(String.valueOf(ans));
-            replace=false;
+            replace = false;
         } else if (event.getSource() == signo) { // signo
             String c = display.getText();
             float ans = Calculadora.signo(c);
@@ -188,7 +191,7 @@ public class FXMLDocumentController implements Initializable {
             display.setText("");
             float ans = Calculadora.tenPow(data);
             display.setText(String.valueOf(ans));
-            replace=false;
+            replace = false;
         } else if (event.getSource() == equals) {
             float secondOperand = Float.parseFloat(display.getText());
             switch (operation) {
