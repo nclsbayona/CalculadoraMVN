@@ -35,7 +35,7 @@ public class Calculadora {
     {
         return Calculadora.multiply(-1, Float.parseFloat(a));
     }
-    public static float nfactorial(float a)
+    public static float nFact(float a)
     {
         float factorial = 1;
         for(int i = 1; i <= a; i++)
