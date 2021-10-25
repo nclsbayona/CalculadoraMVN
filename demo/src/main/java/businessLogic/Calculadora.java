@@ -31,7 +31,7 @@ public class Calculadora {
     }
 
     public static float nFact(float a) {
-        if (String.valueOf(a).contains("."))
+        if (String.valueOf(a).contains(".") || a<0)
             return 0;
         float factorial = 1;
         for (int i = 1; i <= a; i++) {
