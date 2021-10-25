@@ -1,4 +1,4 @@
 demo/target*
 .vscode
-pom.xml
+demo/pom.xml
 nb*
