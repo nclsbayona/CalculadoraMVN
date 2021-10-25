@@ -9,13 +9,10 @@ import businessLogic.Calculadora;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javax.xml.validation.ValidatorHandler;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 /**
