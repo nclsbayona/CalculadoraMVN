@@ -31,9 +31,9 @@ public class Calculadora {
     {
         return (float)Math.sqrt(a);
     }
-    public static float signo(float a)
+    public static float signo(String a)
     {
-        return -a;
+        return Calculadora.multiply(-1, Float.parseFloat(a));
     }
     public static float nfactorial(float a)
     {
@@ -53,5 +53,9 @@ public class Calculadora {
     public static float tenPow(float a)
     {
         return (float)10 * a;
+    }
+
+    public static float coma(String value) {
+        return Float.valueOf(value);
     }
 }

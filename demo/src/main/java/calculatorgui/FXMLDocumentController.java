@@ -8,6 +8,9 @@ package calculatorgui;
 import businessLogic.Calculadora;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javax.xml.validation.ValidatorHandler;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -23,6 +26,7 @@ public class FXMLDocumentController implements Initializable {
 
     private float data;
     private int operation = -1;
+    private boolean replace=false;
 
     @FXML
     private Button one;
@@ -101,6 +105,11 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void handleButtonAction(ActionEvent event) {
+        if (replace){
+            display.setText(display.getText().substring(0, display.getText().length()-1));
+            replace=false;
+        }
+
         if (event.getSource() == one) {
             display.setText(display.getText() + "1");
         } else if (event.getSource() == two) {
@@ -124,10 +133,12 @@ public class FXMLDocumentController implements Initializable {
         } else if (event.getSource() == clear) {
             display.setText("");
         } else if (event.getSource() == coma) {
-            display.setText(display.getText()+".");
+            String value=display.getText();
+            display.setText(String.valueOf(Calculadora.coma(value)));
+            replace=true;
         } else if (event.getSource() == signo) {
-            float aux = Float.parseFloat(display.getText());
-            display.setText(String.valueOf(Calculadora.multiply(-1, aux)));
+            String value=display.getText();
+            display.setText(String.valueOf(Calculadora.signo(value)));
         } else if (event.getSource() == plus) {
             data = Float.parseFloat(display.getText());
             operation = 1; // Addition
