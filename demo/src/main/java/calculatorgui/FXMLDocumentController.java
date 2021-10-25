@@ -131,8 +131,10 @@ public class FXMLDocumentController implements Initializable {
             display.setText("");
         } else if (event.getSource() == coma) {
             String value = display.getText();
-            display.setText(String.valueOf(Calculadora.coma(value)));
-            replace = true;
+            if (!value.contains(".")) {
+                display.setText(String.valueOf(Calculadora.coma(value)));
+                replace = true;
+            }
         } else if (event.getSource() == signo) {
             String value = display.getText();
             display.setText(String.valueOf(Calculadora.signo(value)));
