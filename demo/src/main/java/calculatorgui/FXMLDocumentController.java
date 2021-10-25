@@ -107,9 +107,8 @@ public class FXMLDocumentController implements Initializable {
             replace = false;
         }
         if (event.getSource() == back) {
-            display.setText(display.getText().substring(0, display.getText().length() - 1));
-            if (display.getText().endsWith("."))
-                display.setText(display.getText() + "0");
+            String text=display.getText();
+            display.setText(Calculadora.back(text));
         } else if (event.getSource() == one) {
             display.setText(display.getText() + "1");
         } else if (event.getSource() == two) {

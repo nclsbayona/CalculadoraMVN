@@ -49,4 +49,11 @@ public class Calculadora {
     public static float coma(String value) {
         return Float.valueOf(value);
     }
+
+    public static String back(String text) {
+        String net=text.substring(0, text.length()-1);
+        if (net.endsWith("."))
+            net+="0";
+        return net;
+    }
 }
