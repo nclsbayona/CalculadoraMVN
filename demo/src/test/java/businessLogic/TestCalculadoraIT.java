@@ -163,7 +163,7 @@ public class TestCalculadoraIT {
         float a = 1;
         float b = 0;
         float c = Calculadora.div(a, b);
-        assertNotEquals(c, 0, 0);
+        assertTrue(Double.isInfinite(c));
     }
 
 }
