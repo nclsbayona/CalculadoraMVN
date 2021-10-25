@@ -208,6 +208,14 @@ public class TestCalculadoraIT {
         assertEquals(c, 11.2, 0.2);
     }
 
+    //Test factorial de decimal
+    @Test
+    public void testFactoDecimal() {
+        float a = (float) 11.2;
+        float c=Calculadora.nFact(a);
+        assertEquals(c, 0,0);
+    }
+
     //Test 1x10
 
     @Test
