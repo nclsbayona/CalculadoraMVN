@@ -123,6 +123,8 @@ public class FXMLDocumentController implements Initializable {
             display.setText(display.getText() + "0");
         } else if (event.getSource() == clear) {
             display.setText("");
+        } else if (event.getSource() == coma) {
+            display.setText(display.getText()+".");
         } else if (event.getSource() == plus) {
             data = Float.parseFloat(display.getText());
             operation = 1; // Addition
