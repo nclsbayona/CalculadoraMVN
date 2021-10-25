@@ -43,7 +43,7 @@ public class Calculadora {
     }
 
     public static float tenPow(float a) {
-        return (float) 10 * a;
+        return (float) Math.pow(10,a);
     }
 
     public static float coma(String value) {
