@@ -35,7 +35,7 @@ public class Calculadora {
     {
         return -a;
     }
-    public static float nfactorial(float a)
+    public static float nFact(float a)
     {
         float factorial = 1;
         for(int i = 1; i <= a; i++)

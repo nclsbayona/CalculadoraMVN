@@ -148,7 +148,31 @@ public class FXMLDocumentController implements Initializable {
             data = Float.parseFloat(display.getText());
             operation = 5; // mod
             display.setText("");
-        } else if (event.getSource() == equals) {
+        }else if (event.getSource() == sqrt) { //sqrt
+            data = Float.parseFloat(display.getText());
+            display.setText("");
+            float ans = Calculadora.sqrt(data);
+            display.setText(String.valueOf(ans));
+        }
+        else if (event.getSource() == nFact) { //nfact
+            data = Float.parseFloat(display.getText());
+            display.setText("");
+            float ans = Calculadora.nFact(data);
+            display.setText(String.valueOf(ans)); 
+        }  
+        else if (event.getSource() == signo) { //signo
+            data = Float.parseFloat(display.getText());
+            display.setText("");
+            float ans = Calculadora.signo(data);
+            display.setText(String.valueOf(ans));
+        } 
+        else if (event.getSource() == log) { //log
+            data = Float.parseFloat(display.getText());
+            display.setText("");
+            float ans = Calculadora.log(data);
+            display.setText(String.valueOf(ans));
+        }   
+         else if (event.getSource() == equals) {
             float secondOperand = Float.parseFloat(display.getText());
             switch (operation) {
             case 1: // Addition
@@ -173,6 +197,7 @@ public class FXMLDocumentController implements Initializable {
                 ans = Calculadora.mod(data, secondOperand);
                 display.setText(String.valueOf(ans));
                 break;
+            
             }
         }
     }
