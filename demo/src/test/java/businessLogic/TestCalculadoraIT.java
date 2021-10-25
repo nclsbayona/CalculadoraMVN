@@ -110,4 +110,23 @@ public class TestCalculadoraIT {
         assertEquals(c, a, 0);
     }
 
+    // Test ley de signos
+    @Test
+    public void testSignos() {
+        float a = -3;
+        float b = -2;
+        float c = Calculadora.add(a, b);
+        assertEquals(c, -5, 0);
+    }
+
+    // Test maximo - minimo
+    @Test
+    public void testMaxMMin() {
+        float a = (float) 9223372036854775807.0;
+        float b = (float) -9223372036854775808.0;
+        float c = Calculadora.substract(a, b);
+        float d = (float) 18446744073709551615.0;
+        assertEquals(c, d, 0);
+    }
+
 }
