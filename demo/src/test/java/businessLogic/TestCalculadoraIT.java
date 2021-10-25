@@ -148,4 +148,22 @@ public class TestCalculadoraIT {
         assertEquals(a, 1000, 0);
     }
 
+    // Test valor+(-valor)
+    @Test
+    public void testSumaInversos() {
+        float a = 1;
+        float b = Calculadora.multiply(a, -1);
+        float c = Calculadora.add(a, b);
+        assertEquals(c, 0, 0);
+    }
+
+    // Test división entre cero
+    @Test
+    public void testDivCero() {
+        float a = 1;
+        float b = 0;
+        float c = Calculadora.div(a, b);
+        assertNotEquals(c, 0, 0);
+    }
+
 }
