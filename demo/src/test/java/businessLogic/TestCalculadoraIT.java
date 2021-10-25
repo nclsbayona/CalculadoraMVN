@@ -289,11 +289,7 @@ public class TestCalculadoraIT {
         assertEquals(expResult, result, 0);
     }
 
-<<<<<<< HEAD
-    //Test mod even
-=======
     // Test mod
->>>>>>> ad2d3de7915fc1e275db7b5d9b889130ea3b8896
     @Test
     public void testModEven() {
         float a = (float) 10.0;
@@ -303,7 +299,6 @@ public class TestCalculadoraIT {
         assertEquals(expResult, result, 0);
     }
 
-<<<<<<< HEAD
     //Test mod odd
     @Test
     public void testModOdd(){
@@ -341,6 +336,4 @@ public class TestCalculadoraIT {
     }
 
 
-=======
->>>>>>> ad2d3de7915fc1e275db7b5d9b889130ea3b8896
 }
