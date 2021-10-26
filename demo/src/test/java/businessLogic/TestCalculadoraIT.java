@@ -283,6 +283,14 @@ public class TestCalculadoraIT {
         assertEquals(Calculadora.nFact(a), Calculadora.nFact(b), 0);
     }
 
+    // Test mod normal vs inverso
+    @Test
+    public void testModNVSI() {
+        int a = 10;
+        int b = 2;
+        assertEquals(Calculadora.mod(a,b), Calculadora.mod(Calculadora.signo(String.valueOf(a)), b), 0);
+    }
+
     // Test 1x10
 
     @Test
