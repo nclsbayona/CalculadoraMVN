@@ -41,8 +41,9 @@ public class Calculadora {
         return factorial;
     }
 
+    //Log base 10
     public static float log(float a) {
-        return (float) Math.log(a);
+        return (float) Math.log10(a);
     }
 
     public static float tenPow(float a) {
@@ -59,4 +60,7 @@ public class Calculadora {
             net+="0";
         return net;
     }
+
+
+
 }

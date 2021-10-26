@@ -396,5 +396,111 @@ public class TestCalculadoraIT {
         assertEquals(expResult, result, 0);
     }
 
+    //Test mod sqrt
+    @Test
+    public void testModSqrt(){
+        float a =  (float) 9;
+        float b =  (float) 3.0;
+        float expResult = (float) 0.0;
+        float result = Calculadora.mod(Calculadora.sqrt(a), b);
+        assertEquals(expResult, result, 0);
+    }
+
+    //Test signo sqrt
+    @Test
+    public void testSignoSqrt(){
+        float a =  (float) 9;
+        float expResult = (float) -3.0;
+        float result = Calculadora.signo(String.valueOf(Calculadora.sqrt(a)));
+        assertEquals(expResult, result, 0);
+    }
+
+    //Test add sqrt
+    @Test
+    public void testAddSqrt(){
+        float a =  (float) 9;
+        float b =  (float) 100;
+        float expResult = (float) 13;
+        float result = Calculadora.add(Calculadora.sqrt(a), Calculadora.sqrt(b));
+        assertEquals(expResult, result, 0);
+    }
+
+    //Test multiply log
+    @Test
+    public void testMultiplyLog(){
+        float a =  Calculadora.log(10) ;
+        float b =  Calculadora.log(100);
+        float expResult = (float) 2;
+        float result = Calculadora.multiply(a,b);
+        assertEquals(expResult, result, 0);
+    }
+
+    //Test div multiplication
+    @Test
+    public void testDivMultiplication(){
+        float a =  (float) 10;
+        float b =  (float) 100;
+        float expResult = (float) 1;
+        float result = Calculadora.div(Calculadora.multiply(a,b), Calculadora.multiply(a,b));
+        assertEquals(expResult, result, 0);
+    }
+
+    //Test factorial log
+    @Test
+    public void testFactorialLog(){
+        float a =  (float) 1000;
+        float expResult = (float) 6;
+        float result = Calculadora.nFact((int)Calculadora.log(a));
+        assertEquals(expResult, result, 0);
+    }
+
+    //Test sqrt x10
+    @Test
+    public void testSqrtX10(){
+        float a =  (float) 10;
+        float expResult = (float) 10;
+        float result = Calculadora.sqrt(Calculadora.tenPow(a));
+        assertEquals(expResult, result, 0);
+    }
+
+    //Test log x10
+    @Test
+    public void testLogX10(){
+        float a =  (float) 10;
+        float expResult = (float) 10;
+        float result = Calculadora.tenPow(Calculadora.log(a));
+        assertEquals(expResult, result, 0);
+    }
+
+    //Test add factorial
+    @Test
+    public void testAddFactorial(){
+        float a =  (float) 4;
+        float b =  (float) 5;
+        float expResult = (float) 144;
+        float result = Calculadora.add(Calculadora.nFact((int)a), Calculadora.nFact((int)b));
+        assertEquals(expResult, result, 0);
+    }
+
+    //Test multiply sqrt
+    @Test
+    public void testMultiplySqrt(){
+        float a =  (float) 4;
+        float b =  (float) 5;
+        float expResult = (float) 6;
+        float result = Calculadora.multiply(Calculadora.sqrt(a), Calculadora.sqrt(9));
+        assertEquals(expResult, result, 0);
+    }
+
+    //Test add substract
+    @Test
+    public void testAddSubstract(){
+        float a =  (float) 4;
+        float b =  (float) 5;
+        float expResult = (float) 0;
+        float result = Calculadora.add(Calculadora.substract(a,b), Calculadora.substract(b,a));
+        assertEquals(expResult, result, 0);
+    }
+
 
 }
