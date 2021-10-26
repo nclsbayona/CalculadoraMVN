@@ -173,9 +173,9 @@ public class FXMLDocumentController implements Initializable {
             float ans = Calculadora.sqrt(data);
             display.setText(String.valueOf(ans));
         } else if (event.getSource() == nFact) { // nfact
-            data = Float.parseFloat(display.getText());
+            data = Integer.parseInt(display.getText());
             display.setText("");
-            float ans = Calculadora.nFact(data);
+            int ans = Calculadora.nFact((int)data);
             display.setText(String.valueOf(ans));
             replace = false;
         } else if (event.getSource() == signo) { // signo
