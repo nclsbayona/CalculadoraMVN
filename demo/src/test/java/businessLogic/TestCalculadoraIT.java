@@ -253,6 +253,37 @@ public class TestCalculadoraIT {
         assertEquals(a, Calculadora.multiply(a, b), 0);
     }
 
+    // Test log de 1
+    @Test
+    public void testLog1() {
+        int a = 1;
+        assertEquals(Calculadora.substract(a, a), Calculadora.log(a), 0);
+    }
+
+    // Test log de 1
+    @Test
+    public void testSignoConDiv() {
+        int a = 10;
+        int b = -1;
+        assertEquals(a, Calculadora.signo(String.valueOf(Calculadora.div(a, b))), 0);
+    }
+
+    // Test facto de 0=facto 1
+    @Test
+    public void testFacto0y1() {
+        int a = 0;
+        int b = 1;
+        assertEquals(Calculadora.nFact(a), Calculadora.nFact(b), 0);
+    }
+
+    // Test mod normal vs inverso
+    @Test
+    public void testModNVSI() {
+        int a = 10;
+        int b = 2;
+        assertEquals(Calculadora.mod(a,b), Calculadora.mod(Calculadora.signo(String.valueOf(a)), b), 0);
+    }
+
     // Test 1x10
 
     @Test
@@ -282,7 +313,7 @@ public class TestCalculadoraIT {
         assertEquals(expResult, result, 0);
     }
 
-    //Test mod even
+    // Test mod even
     // Test mod
     @Test
     public void testModEven() {
@@ -293,9 +324,9 @@ public class TestCalculadoraIT {
         assertEquals(expResult, result, 0);
     }
 
-    //Test mod odd
+    // Test mod odd
     @Test
-    public void testModOdd(){
+    public void testModOdd() {
         float a = (float) 11.0;
         float b = (float) 2.0;
         float expResult = (float) 1.0;
@@ -303,27 +334,27 @@ public class TestCalculadoraIT {
         assertEquals(expResult, result, 0);
     }
 
-    //Test sqrt
+    // Test sqrt
     @Test
-    public void testSqrt(){
+    public void testSqrt() {
         float a = (float) 4.0;
         float expResult = (float) 2.0;
         float result = Calculadora.sqrt(a);
         assertEquals(expResult, result, 0);
     }
 
-    //Test sqrt big number
+    // Test sqrt big number
     @Test
-    public void testSqrtBigNumber(){
+    public void testSqrtBigNumber() {
         float a = (float) 6561;
         float expResult = (float) 81.0;
         float result = Calculadora.sqrt(a);
         assertEquals(expResult, result, 0);
     }
 
-    //Test sqrt negative number
+    // Test sqrt negative number
     @Test
-    public void testSqrtNegativeNumber(){
+    public void testSqrtNegativeNumber() {
         float a = (float) -4.0;
         float result = Calculadora.sqrt(a);
         assertTrue(Float.isNaN(result));
