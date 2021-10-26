@@ -376,7 +376,24 @@ public class TestCalculadoraIT {
         float expResult = -1;
         float result = Calculadora.nFact(a);
         assertEquals(expResult, result, 0);
+    }
 
+    //Test factorial x10
+    @Test
+    public void testFactorialX10(){
+        float a =  Calculadora.tenPow(1);
+        float expResult = (float) 3628800;
+        float result = Calculadora.nFact((int)a);
+        assertEquals(expResult, result, 0);
+    }
+
+    //Test 10x sqrt
+    @Test
+    public void testTenXSqrt(){
+        float a =  Calculadora.tenPow(10);
+        float expResult = (float) 10;
+        float result = Calculadora.sqrt(a);
+        assertEquals(expResult, result, 0);
     }
 
 
