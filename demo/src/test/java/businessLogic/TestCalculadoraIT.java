@@ -9,6 +9,8 @@ import businessLogic.Calculadora;
 
 import static org.junit.Assert.*;
 
+import javax.sound.sampled.SourceDataLine;
+
 public class TestCalculadoraIT {
 
     public TestCalculadoraIT() {
@@ -208,15 +210,6 @@ public class TestCalculadoraIT {
         float c = Calculadora.add(Float.parseFloat(Calculadora.back(String.valueOf(a))), (float) 0.2);
         assertEquals(c, 11.2, 0.2);
     }
-
-    // Test factorial de decimal
-    @Test
-    public void testFactoDecimal() {
-        float a = (float) 11.2;
-        float c = Calculadora.nFact(a);
-        assertEquals(c, 0, 0);
-    }
-
     // Test signo basico
     @Test
     public void testSign() {
@@ -334,6 +327,25 @@ public class TestCalculadoraIT {
         float a = (float) -4.0;
         float result = Calculadora.sqrt(a);
         assertTrue(Float.isNaN(result));
+    }
+
+    //Test factorial
+    @Test
+    public void testFactorial(){
+        int a =  8;
+        float expResult = (float) 40320;
+        float result = Calculadora.nFact(a);
+        assertEquals(expResult, result, 0);
+    }
+
+    //Test factorial negative number
+    @Test
+    public void testFactorialNegativeNumber(){
+        int a =  -8;
+        float expResult = -1;
+        float result = Calculadora.nFact(a);
+        assertEquals(expResult, result, 0);
+
     }
 
 

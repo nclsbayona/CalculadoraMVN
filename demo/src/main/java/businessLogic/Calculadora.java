@@ -30,10 +30,11 @@ public class Calculadora {
         return Calculadora.multiply(-1, Float.parseFloat(a));
     }
 
-    public static float nFact(float a) {
-        if (String.valueOf(a).contains("."))
-            return 0;
-        float factorial = 1;
+    public static int nFact(int a) {
+        if (String.valueOf(a).contains(".") || a < 0) {
+            return -1;
+        }
+        int factorial = 1;
         for (int i = 1; i <= a; i++) {
             factorial *= i;
         }
